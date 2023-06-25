@@ -1,9 +1,11 @@
-# build output
+# my settings
 # dist/
+dist/api
+dist/uploads
+.htaccess
 
 # generated types
 .astro/
-.htaccess
 
 # dependencies
 node_modules/
