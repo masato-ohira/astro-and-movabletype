@@ -1,11 +1,6 @@
 module.exports = {
-  // testMatch: ['./__tests__/**/*.{js|ts}'],
+  testMatch: ['**/__tests__/**/*.ts', '**/__tests__/**/*.js'],
   // testEnvironment: 'jsdom',
-  // // モジュールのマッピングを指定します
-  // moduleNameMapper: {
-  //   // CSS モジュールをモックするための設定例
-  //   '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-  // },
   preset: 'ts-jest',
   moduleNameMapper: {
     '^lodash-es$': 'lodash',

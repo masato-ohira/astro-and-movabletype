@@ -3,4 +3,6 @@ import Layout from '@/layouts/Layout.astro'
 import { NewsList } from '@/components/views/NewsList'
 ---
 
-<Layout title={'<mt:EntryTitle>'}><$mt:EntryBody$></Layout>
+<Layout title={'<mt:EntryTitle>'}>
+  <div class='znc' set:html='<mt:EntryBody>' />
+</Layout>
