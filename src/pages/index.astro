@@ -5,14 +5,12 @@ import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout>
-  <main>
-    <MyStack className='space-y-8'>
-      <div>
-        <img src='https://placehold.jp/eee/ccc/1600x600.jpg?text=MV' alt='' />
-      </div>
-      <div>
-        <NewsList limit={3} client:load />
-      </div>
-    </MyStack>
-  </main>
+  <MyStack className='space-y-8'>
+    <div>
+      <img src='https://placehold.jp/eee/ccc/1600x600.jpg?text=MV' alt='' />
+    </div>
+    <div>
+      <NewsList limit={3} client:load />
+    </div>
+  </MyStack>
 </Layout>

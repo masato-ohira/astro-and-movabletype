@@ -4,6 +4,11 @@ import { MyHeader } from '@/components/layouts/MyHeader'
 import { MyContainer } from '@/components/ui/MyContainer'
 import '@/styles/global.css'
 import 'zenn-content-css'
+
+export interface Props {
+  title?: string
+}
+const { title = 'Default Title' } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -19,7 +24,7 @@ import 'zenn-content-css'
       href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap'
       rel='stylesheet'
     />
-    <title>SiteName</title>
+    <title set:html={title} />
   </head>
   <body>
     <MyHeader />

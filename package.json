@@ -9,6 +9,7 @@
     "astro": "astro",
     "test": "jest --verbose",
     "icons": "node npm-scripts/icons/index.js",
+    "ftp": "git ftp push -k",
     "git": "git add . && git commit -a -m $M"
   },
   "dependencies": {
