@@ -1,0 +1,10 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { NewsList } from '@/components/views/NewsList'
+---
+
+<Layout>
+  <main>
+    <NewsList client:load />
+  </main>
+</Layout>
