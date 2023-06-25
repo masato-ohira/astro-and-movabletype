@@ -40,7 +40,14 @@ const NewsItem = (props: NewsItemType) => {
   return (
     <dl className={'border-b border-gray-200 py-3 space-x-1'}>
       <dt className={'text-sm'}>{date}</dt>
-      <dd className={'font-semibold'}>{props.title}</dd>
+      <dd className={'font-semibold'}>
+        <a
+          className={'text-blue-800 hover:underline'}
+          href={`/news/detail/${props.id}/`}
+        >
+          {props.title}
+        </a>
+      </dd>
     </dl>
   )
 }

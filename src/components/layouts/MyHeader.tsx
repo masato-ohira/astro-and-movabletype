@@ -30,7 +30,7 @@ export const MyHeader = () => {
                     'inline-flex items-center hover:opacity-50 transition-all'
                   }
                 >
-                  <div className={'text-blue-700'}>
+                  <div className={'text-blue-800'}>
                     <MyIcon
                       size={i.href == '/' ? '24px' : '16px'}
                       name={i.href == '/' ? 'home' : 'arrow_forward'}
