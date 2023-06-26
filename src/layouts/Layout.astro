@@ -27,7 +27,7 @@ const { title = 'Default Title' } = Astro.props
     <title set:html={title} />
   </head>
   <body>
-    <MyHeader client:only />
+    <MyHeader client:only='react' />
     <MyContainer className='pt-12 pb-16'>
       <main class='min-h-screen'>
         <slot />
