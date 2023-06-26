@@ -2,6 +2,7 @@
 # dist/
 dist/api
 dist/uploads
+npm-scripts/placehold/dist
 .htaccess
 
 # generated types

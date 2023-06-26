@@ -5,8 +5,8 @@ const _ = require('lodash')
 const distDir = `npm-scripts/placehold/dist`
 
 const saveMv = async () => {
-  const ids = _.times(24, () => {
-    return _.random(1, 150)
+  const ids = _.times(200, (n) => {
+    return n + 1
   })
   for (let id of ids) {
     const fileName = `mv-${id}`

@@ -5,6 +5,7 @@ import { MyContainer } from '@/components/ui/MyContainer'
 import 'zenn-content-css'
 import '@/styles/tailwind.css'
 import '@/styles/global.scss'
+import { MyPagetop } from '@/components/ui/MyPagetop'
 
 export interface Props {
   title?: string
@@ -29,11 +30,13 @@ const { title = 'Default Title' } = Astro.props
   </head>
   <body>
     <MyHeader client:load />
+    <slot name='mv' />
     <MyContainer className='pt-12 pb-16'>
-      <main class='min-h-screen'>
+      <main class='min-h-80vh'>
         <slot />
       </main>
     </MyContainer>
+    <MyPagetop client:load />
     <MyFooter />
   </body>
 </html>

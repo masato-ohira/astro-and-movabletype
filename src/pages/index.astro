@@ -7,8 +7,10 @@ import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout>
-  <MyStack className='space-y-8'>
+  <div slot='mv'>
     <TopMv client:load />
+  </div>
+  <MyStack className='space-y-8'>
     <div>
       <NewsList limit={3} client:load />
     </div>

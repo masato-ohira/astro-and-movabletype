@@ -6,6 +6,10 @@
   @apply text-blue-800 hover:underline;
 }
 
+.min-h-80vh {
+  min-height: 80vh;
+}
+
 .aspect-banner {
   aspect-ratio: 16/6;
 }
