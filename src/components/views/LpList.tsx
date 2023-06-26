@@ -1,13 +1,24 @@
 import { useEffect, useState } from 'react'
 import { MyGrid } from '../ui/MyGrid'
 import axios from 'axios'
-import { take } from 'lodash-es'
+// import { take } from 'lodash-es'
+
+type AssetType = {
+  id: string
+  filename: string
+  mimetype: string
+  resizes: {
+    medium: string
+    small: string
+  }
+}
 
 type EntryType = {
-  userId: number
-  id: number
+  id: string
   title: string
-  body: string
+  date: string
+  permalink: string
+  assets: AssetType[]
 }
 
 export const LpList = () => {
@@ -15,10 +26,12 @@ export const LpList = () => {
   const hasValue = items.length > 0
 
   const fetchData = async () => {
-    const { data } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts',
-    )
-    setItems(take(data, 10))
+    const { data } = await axios.get('/api/lp.json', {
+      params: {
+        ts: Date.now(),
+      },
+    })
+    setItems(data.items)
   }
 
   useEffect(() => {
@@ -27,7 +40,7 @@ export const LpList = () => {
 
   if (!hasValue) return <></>
   return (
-    <MyGrid className={'grid-cols-4 gap-8'}>
+    <MyGrid className={'grid-cols-2 gap-16'}>
       {items.map((i: EntryType) => {
         return <LpItem {...i} />
       })}
@@ -36,12 +49,15 @@ export const LpList = () => {
 }
 
 const LpItem = (props: EntryType) => {
+  const thum = props.assets[0].resizes.medium
   return (
     <div>
-      <div>
-        <img src='https://placehold.jp/eee/ccc/1024x768.png?text=MV' alt='' />
-      </div>
-      <div className={'pt-3'}>{props.title}</div>
+      <a href={`/lp/detail/${props.id}/`} className={'inline-block'}>
+        <div>
+          <img src={thum} alt='' />
+        </div>
+        <div className={'pt-3 text-xl font-semibold'}>{props.title}</div>
+      </a>
     </div>
   )
 }
