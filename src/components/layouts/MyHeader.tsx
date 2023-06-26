@@ -1,8 +1,11 @@
 import { MyIcon } from '../icons/MyIcon'
 import { MyHStack } from '../ui/MyHStack'
 import { twMerge } from 'tailwind-merge'
+import { usePathname } from '@/hooks/usePathname'
 
 export const MyHeader = () => {
+  const { pathname } = usePathname()
+
   const menu = [
     { name: 'HOME', href: '/' },
     { name: 'お知らせ', href: '/news/' },
@@ -11,7 +14,7 @@ export const MyHeader = () => {
   ]
 
   const isCurrent = (href: string) => {
-    return window.location.pathname == href ? 'underline' : ''
+    return pathname == href ? 'underline' : ''
   }
 
   return (
