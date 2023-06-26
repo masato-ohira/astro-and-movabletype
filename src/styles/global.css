@@ -17,3 +17,7 @@
 .mt-be-columns > .mt-be-column {
   @apply w-1/2 m-0 p-0;
 }
+
+.mt-be-columns > .mt-be-column > *:first-child {
+  @apply mt-0;
+}
