@@ -14,6 +14,6 @@
   @apply mb-12;
 }
 
-.mt-be-column {
+.mt-be-columns > .mt-be-column {
   @apply w-1/2 m-0 p-0;
 }
