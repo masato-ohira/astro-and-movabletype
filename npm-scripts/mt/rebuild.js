@@ -30,9 +30,9 @@ const main = async () => {
       console.log({ success: `${id}_再構築完了` })
     }
 
-    await rebuild(7)
-    await rebuild(8)
-    await rebuild(6)
+    for (let blogId of [7, 8, 6]) {
+      await rebuild(blogId)
+    }
   } catch (error) {
     console.log({ error })
   } finally {
