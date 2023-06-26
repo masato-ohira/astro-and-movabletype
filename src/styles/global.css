@@ -6,7 +6,7 @@
   @apply text-blue-800 hover:underline;
 }
 
-.mt-be-columns {
+/* .mt-be-columns {
   @apply flex space-x-12 space-y-12;
 }
 
@@ -20,4 +20,4 @@
 
 .mt-be-columns > .mt-be-column > *:first-child {
   @apply mt-0;
-}
+} */
