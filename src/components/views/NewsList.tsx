@@ -15,7 +15,11 @@ export const NewsList = ({ limit = 20 }: { limit?: number }) => {
   const hasValue = news.length > 0
 
   const fetchNews = async () => {
-    const { data } = await axios.get('/api/news.json')
+    const { data } = await axios.get('/api/news.json', {
+      params: {
+        ts: Date.now(),
+      },
+    })
     setNews(take(data.items, limit))
   }
 
