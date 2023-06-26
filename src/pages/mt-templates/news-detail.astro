@@ -5,3 +5,9 @@ import Layout from '@/layouts/Layout.astro'
 <Layout title={'<mt:EntryTitle>'}>
   <div class='znc' set:html={`<mt:EntryBody>`} />
 </Layout>
+
+<style>
+  .znc a {
+    @apply text-blue-800 hover:underline;
+  }
+</style>
