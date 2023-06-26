@@ -1,5 +1,6 @@
 import { MyIcon } from '../icons/MyIcon'
 import { MyHStack } from '../ui/MyHStack'
+import { twMerge } from 'tailwind-merge'
 
 export const MyHeader = () => {
   const menu = [
@@ -8,6 +9,11 @@ export const MyHeader = () => {
     { name: '会社概要', href: '/about/' },
     { name: '特集', href: '/lp/' },
   ]
+
+  const isCurrent = (href: string) => {
+    return window.location.pathname == href ? 'underline' : ''
+  }
+
   return (
     <>
       <div className={'p-4 px-8 border-b border-gray-200'}>
@@ -22,14 +28,13 @@ export const MyHeader = () => {
           </a>
           <MyHStack className={'space-x-8'}>
             {menu.map((i) => {
+              const linkClass = twMerge(
+                'inline-flex items-center hover:opacity-50 transition-all',
+                isCurrent(i.href),
+              )
+
               return (
-                <a
-                  key={i.name}
-                  href={i.href}
-                  className={
-                    'inline-flex items-center hover:opacity-50 transition-all'
-                  }
-                >
+                <a key={i.name} href={i.href} className={linkClass}>
                   <div className={'text-blue-800'}>
                     <MyIcon
                       size={i.href == '/' ? '24px' : '16px'}
