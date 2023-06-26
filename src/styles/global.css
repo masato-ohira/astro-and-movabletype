@@ -7,7 +7,7 @@
 }
 
 .mt-be-columns {
-  @apply flex space-x-4;
+  @apply flex space-x-12;
 }
 
 .mt-be-column {
