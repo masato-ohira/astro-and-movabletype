@@ -5,3 +5,11 @@
 .is-detail .znc a {
   @apply text-blue-800 hover:underline;
 }
+
+.mt-be-columns {
+  @apply flex space-x-4;
+}
+
+.mt-be-column {
+  @apply w-1/2;
+}
