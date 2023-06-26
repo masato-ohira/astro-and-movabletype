@@ -11,6 +11,6 @@ type MyIconProps = IconBaseProps & {
 }
 
 export const MyIcon = (props: MyIconProps) => {
-  const svgData = get(svgList, props.name)
+  const svgData: any = get(svgList, props.name)
   return GenIcon(svgData)(props)
 }
