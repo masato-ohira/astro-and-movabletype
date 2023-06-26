@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.is-detail .znc a {
+  @apply text-blue-800 hover:underline;
+}
