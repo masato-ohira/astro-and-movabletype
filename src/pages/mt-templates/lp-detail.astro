@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout title={'<mt:EntryTitle>'}>
+  <div class='is-detail'>
+    <div class='znc' set:html={`<mt:EntryBody>`} />
+  </div>
+</Layout>
+
+<style is:global>
+  .is-detail .znc a {
+    @apply text-blue-800 hover:underline;
+  }
+</style>
