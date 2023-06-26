@@ -1,7 +1,7 @@
 module.exports = {
-  testMatch: ['**/__tests__/**/*.ts', '**/__tests__/**/*.js'],
-  // testEnvironment: 'jsdom',
-  preset: 'ts-jest',
+  // testMatch: ['**/__tests__/**/*.ts', '**/__tests__/**/*.js'],
+  testEnvironment: 'jsdom',
+  // preset: 'ts-jest',
   moduleNameMapper: {
     '^lodash-es$': 'lodash',
   },

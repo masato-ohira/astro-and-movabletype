@@ -1,0 +1,1 @@
+import{t as g}from"./toInteger.4b3670d7.js";function h(u,e,i){var l=-1,f=u.length;e<0&&(e=-e>f?0:f+e),i=i>f?f:i,i<0&&(i+=f),f=e>i?0:i-e>>>0,e>>>=0;for(var o=Array(f);++l<f;)o[l]=u[l+e];return o}function c(u,e,i){return u&&u.length?(e=i||e===void 0?1:g(e),h(u,0,e<0?0:e)):[]}export{c as t};

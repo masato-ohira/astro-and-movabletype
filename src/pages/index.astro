@@ -1,16 +1,19 @@
 ---
 import { MyStack } from '@/components/ui/MyStack'
+import { LpList } from '@/components/views/LpList'
 import { NewsList } from '@/components/views/NewsList'
+import { TopMv } from '@/components/views/TopMv'
 import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout>
   <MyStack className='space-y-8'>
-    <div>
-      <img src='https://placehold.jp/eee/ccc/1600x600.jpg?text=MV' alt='' />
-    </div>
+    <TopMv client:load />
     <div>
       <NewsList limit={3} client:load />
+    </div>
+    <div class='pt-8'>
+      <LpList limit={2} client:load />
     </div>
   </MyStack>
 </Layout>

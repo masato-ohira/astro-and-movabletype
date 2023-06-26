@@ -6,6 +6,10 @@
   @apply text-blue-800 hover:underline;
 }
 
+.aspect-banner {
+  aspect-ratio: 16/6;
+}
+
 /* .mt-be-columns {
   @apply flex space-x-12 space-y-12;
 }

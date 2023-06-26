@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MyGrid } from '../ui/MyGrid'
 import axios from 'axios'
+import { take } from 'lodash-es'
 // import { take } from 'lodash-es'
 
 type AssetType = {
@@ -21,7 +22,7 @@ type EntryType = {
   assets: AssetType[]
 }
 
-export const LpList = () => {
+export const LpList = ({ limit }: { limit?: number }) => {
   const [items, setItems] = useState([])
   const hasValue = items.length > 0
 
@@ -31,7 +32,11 @@ export const LpList = () => {
         ts: Date.now(),
       },
     })
-    setItems(data.items)
+    if (limit) {
+      setItems(take(data.items, limit))
+    } else {
+      setItems(data.items)
+    }
   }
 
   useEffect(() => {
@@ -54,7 +59,7 @@ const LpItem = (props: EntryType) => {
     <div>
       <a href={`/lp/detail/${props.id}/`} className={'inline-block'}>
         <div>
-          <img src={thum} alt='' />
+          <img className={`object-cover aspect-banner`} src={thum} alt='' />
         </div>
         <div className={'pt-3 text-xl font-semibold'}>{props.title}</div>
       </a>
