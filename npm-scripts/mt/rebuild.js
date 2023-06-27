@@ -5,6 +5,7 @@ const { MT_ADMIN, MT_USER, MT_PASS } = process.env
 const blogIds = [7, 8, 6]
 
 const main = async () => {
+  // ローカルPCのchromeを指定する
   const browser = await puppeteer.launch({
     channel: 'chrome',
   })
