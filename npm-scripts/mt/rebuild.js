@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer-core')
 require('dotenv').config()
 
 const { MT_ADMIN, MT_USER, MT_PASS } = process.env
+const blogIds = [7, 8, 6]
 
 const main = async () => {
   const browser = await puppeteer.launch({
@@ -22,7 +23,8 @@ const main = async () => {
     })
     console.log('MTにサインイン成功')
 
-    const rebuild = async (id) => {
+    // 再構築コマンド
+    const mtRebuild = async (id) => {
       await page.goto(`${MT_ADMIN}/mt.cgi?__mode=rebuild_confirm&blog_id=${id}`)
       console.log(`${id}_再構築開始`)
       page.click(`button[type="submit"]`)
@@ -30,8 +32,9 @@ const main = async () => {
       console.log({ success: `${id}_再構築完了` })
     }
 
-    for (let blogId of [7, 8, 6]) {
-      await rebuild(blogId)
+    // 対象を再構築
+    for (let blogId of blogIds) {
+      await mtRebuild(blogId)
     }
   } catch (error) {
     console.log({ error })
